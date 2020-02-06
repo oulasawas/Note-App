@@ -1,0 +1,22 @@
+<h4 style="position: relative; left:550px">Important Notes Entered </h4>
+
+<div class="center">
+    <p-carousel [value]="favNotesArray" [circular]="false" [autoplayInterval]="5000" [numScroll]="1" [numVisible]="1"
+        [circular]="false" [responsiveOptions]="responsiveOptions">
+
+        <ng-template let-note pTemplate="item">
+
+            <div class="card" style="height: 40rem;">
+                <div class="card-body">
+
+                    <h5><b>{{note.title}}</b></h5>
+                    <h6 class="text-muted">{{note.dateCreated | date}}</h6>
+                    <h6>{{note.noteBody}}</h6>
+
+                </div>
+            </div>
+        </ng-template>
+
+
+    </p-carousel>
+</div>

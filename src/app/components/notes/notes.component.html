@@ -1,0 +1,71 @@
+<div class="side">
+  <div class="card" style="width: 20rem;">
+    <div class="card-body">
+     
+      <h5><b>Enter Note Title Here:</b></h5>
+      <input type="text" [(ngModel)]="note.title" />
+
+      <h6 class="text-muted">Enter Note Date Here:</h6>
+      <input type="text"  onfocus="(this.type='date')" onblur="(this.type='date')"
+        [(ngModel)]="note.dateCreated" />
+
+      <h5 style="margin-top: 5px; margin-bottom: 5px;">Note Body</h5>
+      <textarea type="text" [(ngModel)]="note.noteBody"></textarea>
+      <p>How important is this note?</p>
+      <p-rating class="star" [(ngModel)]="note.importance" [cancel]="false"></p-rating>
+      <button style="margin-top:10px" (click)="addNote()">Add note</button>
+    </div>
+  </div>
+
+  <div *ngIf="showData && note.title && note.date && note.noteBody">
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h4><b>{{note.title}}</b></h4>
+        <h6 class="card-subtitle  text-muted">{{note.date |date}}</h6>
+        <p>{{note.noteBody}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!--This is for the bigger window-->
+<div class="center">
+  <div class="card" style="height: 40rem; ">
+    <div class="card-body">
+      <ng-template #beginTitle>
+        <ng-container class="card-title">
+          <h5 style="margin-top: 5px; margin-bottom: 5px;"><b>Note Header</b></h5>
+        </ng-container>
+      </ng-template>
+      <div *ngIf="note.title else beginTitle" class="card-title">
+        <h5 style="margin-top: 5px; margin-bottom: 5px;"><b>{{note.title}}</b></h5>
+      </div>
+      <ng-template #beginSub>
+        <ng-container class="card-title">
+          <h6 class="card-subtitle text-muted" style="margin-top: 5px; margin-bottom: 5px;">Note Date</h6>
+        </ng-container>
+      </ng-template>
+      <div *ngIf="note.date else beginSub" class="card-title">
+        <h6 class="card-subtitle  text-muted" style="margin-top: 5px; margin-bottom: 5px;">{{note.date | date}}</h6>
+      </div>
+      <div class="inside">
+        <div class="card" style="height: 30rem; ">
+          <div class="card-body">
+            <h6>{{note.body}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showData && note.title && note.date && note.body">
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h4><b>{{note.title}}</b></h4>
+        <h6 class="card-subtitle  text-muted">{{note.date |date}}</h6>
+        <p>{{note.body}}</p>
+      </div>
+    </div>
+  </div>
+</div>

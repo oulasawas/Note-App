@@ -1,0 +1,22 @@
+.center{
+    margin: auto;
+    width: 50%;
+    
+    border: 3px solid pink;
+    background-color: ghostwhite;
+    padding: 4px;
+    position: relative;
+    bottom: 280px;
+    left: 50px;
+}
+
+.side{
+    position: relative;
+    top: 20px;
+    left:160px;
+}
+
+.inside{
+    position: relative;
+}
+

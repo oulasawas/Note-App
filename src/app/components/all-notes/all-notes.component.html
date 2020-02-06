@@ -1,0 +1,41 @@
+<h4>Notes you've entered: </h4>
+
+<div *ngFor="let note of notes; index as id" >
+    <div class="card" style="width: 20rem;" (click)="onSelect(note)">
+        <div class="tab">
+            <div class="card-body" style="clear:both" >
+                <h6 style="float:inline-start">{{note.title}}</h6>
+                <h6 class="text-muted" style="float: inline-end">{{note.dateCreated | date}}</h6>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div *ngIf="show">
+    <h4>Selected Note:</h4>
+    <div class="card" style="width: 40rem;">
+        <div class="card-body" *ngIf="notes">
+            <h6><b>{{showNote.title}}</b></h6>
+            <h6 class="text-muted">{{showNote.dateCreated | date}}</h6>
+            <h6>{{showNote.noteBody}}</h6>
+        </div>
+    </div>
+    <button (click)="update()" class="edit">Edit</button>
+    <button (click)="delete(showNote)" class="delete">Delete</button>
+</div>
+
+<div *ngIf="canEdit">
+    <h4>Editing Note:</h4>
+    <div class="card" style="width: 40rem;">
+        <div class="card-body" *ngIf="notes">
+            <input type="text" placeholder="{{showNote.title}}"/>
+            <h6 class="text-muted">{{showNote.dateCreated}}</h6>
+            <textarea type="text">{{showNote.noteBody}}</textarea>
+        </div>
+    </div>
+    <button class="save" (click)="save(showNote)">Save</button>
+</div>

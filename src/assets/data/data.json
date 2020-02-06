@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1, 
+        "title":"First Note", 
+        "dateCreated":"Jan 14,2019",
+        "noteBody":"This is the first note created",
+        "importance":1
+    },
+    {
+        "id": 2, 
+        "title":"Second Note", 
+        "dateCreated":"Feb 6,2019",
+        "noteBody":"This is the second note created",
+        "importance":2
+    },
+    {
+        "id": 3, 
+        "title":"Third Note", 
+        "dateCreated":"May 15,2019",
+        "noteBody":"This is the third note created",
+        "importance":2
+    },
+    {
+        "id": 4, 
+        "title":"Welcome Note", 
+        "dateCreated":"Jan 31,2020",
+        "noteBody":"Welcome, in this website you can add notes and prioritize them based on your needs. You can add a title, date created and how important the note is to you. You can also edit and delete old notes, and add new notes",
+        "importance":5
+    }
+
+]
